@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-
 #define ESP 0.000001
 #define f(x) x * x * x - 2 * x - 5;
 void main()
