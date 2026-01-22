@@ -1,8 +1,8 @@
-//Finding a root of the equation f(x)=x^3-6x^2+11x-6.1 using the Bisection Method correct upto
+//Finding a root of the equation f(x)=x^3-2x-5=0 using the Bisection Method correct upto
 //five decimal places.
 #include <stdio.h>
 #include <math.h>
-#define f(x) (x*x*x - 6*x*x + 11*x - 6.1)
+#define f(x) (x*x*x - 2*x - 5)
 void main() {
     float a, b, c;
     int i, n;
@@ -32,7 +32,7 @@ Enter the initial guesses a and b:
 2 4
 Enter the number of iterations:
 10
-The root is: 3.10000
+The root is: 2.09570
 -----------------------------------
 problem 1 solved successfully.
 */
