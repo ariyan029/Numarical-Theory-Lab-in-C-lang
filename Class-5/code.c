@@ -113,3 +113,16 @@ int main(void) {
 	free(x);
 	return 0;
 }
+
+/*
+Format per row: a1 a2 ... an b
+
+Equation 1: 10 3 1 14
+Equation 2: 2 -10 3 -5
+Equation 3: 1 3 10 14
+
+Solution:
+x1 = 1.000000
+x2 = 1.000000
+x3 = 1.000000
+*/
