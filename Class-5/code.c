@@ -16,6 +16,20 @@ static void swap_rows(double *a, int cols, int r1, int r2) {
 	}
 }
 
+static void print_matrix(const double *a, int rows, int cols, const char *title) {
+	printf("\n%s\n", title);
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			if (j == cols - 1) {
+				printf("| %10.4lf ", a[i * cols + j]);
+			} else {
+				printf("%10.4lf ", a[i * cols + j]);
+			}
+		}
+		printf("\n");
+	}
+}
+
 int main(void) {
 	int n;
 
@@ -51,6 +65,8 @@ int main(void) {
 		}
 	}
 
+	print_matrix(aug, n, cols, "Initial Augmented Matrix [A|B]:");
+
 	for (int k = 0; k < n - 1; k++) {
 		int pivot_row = k;
 		double max_value = fabs(aug[k * cols + k]);
@@ -79,7 +95,13 @@ int main(void) {
 				aug[i * cols + j] -= factor * aug[k * cols + j];
 			}
 		}
+
+		char title[80];
+		snprintf(title, sizeof(title), "Upper Triangular Matrix after step %d:", k + 1);
+		print_matrix(aug, n, cols, title);
 	}
+
+	print_matrix(aug, n, cols, "Final Upper Triangular Matrix:");
 
 	if (fabs(aug[(n - 1) * cols + (n - 1)]) < EPS) {
 		printf("No unique solution exists (singular system).\n");
